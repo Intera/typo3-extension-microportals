@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2011-10-17T20:22:32Z" product-name="microportals" target-language="de">
+		<header/>
+		<body>
+			<trans-unit id="pages.tx_microportals_tabheader" xml:space="preserve" approved="yes">
+				<source>Picture for Microportal</source>
+			<target state="translated">Bild für Microportal</target></trans-unit>
+			<trans-unit id="pages.tx_microportals_portalimage" xml:space="preserve" approved="yes">
+				<source>Microportal image</source>
+			<target state="translated">Microportal Bild</target></trans-unit>
+			<trans-unit id="pages.tx_microportals_portalteaser" xml:space="preserve" approved="yes">
+				<source>Microportal teaser</source>
+			<target state="translated">Microportal Teasertext</target></trans-unit>
+			<trans-unit id="tt_content.menu_type.I.tx_microportals_sel_pg" xml:space="preserve" approved="yes">
+				<source>Microportal of the selected pages</source>
+			<target state="translated">Microportal der gewählten Seiten</target></trans-unit>
+			<trans-unit id="tt_content.menu_type.I.tx_microportals_sel_subpg" xml:space="preserve" approved="yes">
+				<source>Microportal of the subpages of the selected pages</source>
+			<target state="translated">Microportal der Unterseiten der gewählten Seiten</target></trans-unit>
+			<trans-unit id="tt_content.menu_type.I.tx_microportals_sel_pg_wsub" xml:space="preserve" approved="yes">
+				<source>Microportal with subpages</source>
+			<target state="translated">Microportal mit Unterseitenmenü</target></trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2011-10-17T20:22:33Z" product-name="microportals" target-language="de">
+		<header/>
+		<body>
+			<trans-unit id="tx_microportals_portalimage.description" xml:space="preserve" approved="yes">
+				<source>If this page is used in a Microportal this image will be displayed together with the page title.</source>
+			<target state="translated">Wenn diese Seite in einem Microportal angezeigt wird, dann wird dieses Bild zusammen mit dem Titel der Seite angezeigt.</target></trans-unit>
+			<trans-unit id="tx_microportals_portalteaser.description" xml:space="preserve" approved="yes">
+				<source>If this page is used in a Microportal this teaser text will be displayed together with the page title.</source>
+			<target state="translated">Wenn diese Seite in einem Microportal angezeigt wird, dann wird dieser Tesasertext zusammen mit dem Titel der Seite angezeigt.</target></trans-unit>
+		</body>
+	</file>
+</xliff>
