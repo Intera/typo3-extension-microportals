@@ -1,0 +1,70 @@
+
+// Microportal of selected pages (based on "Menu of subpages to these pages (with abstract)")
+tt_content.menu.20 {
+
+	// microportal of selected pages
+	tx_microportals_sel_pg = HMENU
+	tx_microportals_sel_pg {
+		special = list
+		stdWrap.outerWrap >
+		wrap = <div class="tx-microportals-microportal row">
+		1 = TMENU
+		1.itemArrayProcFunc = Int\Microportals\Utility\MenuUtility->removeNavTitleItemArrayProcFunc
+		1.IProcFunc = Int\Microportals\Utility\MenuUtility->replaceATagMarkersInMenuPartsIProcFunc
+		1.NO {
+			wrapItemAndSub = <div class="tx-microportals-microportal-column col-md-2 col-xs-4">|</div>
+			stdWrap.outerWrap.cObject = COA
+			stdWrap.outerWrap.cObject {
+
+				stdWrap.wrap (
+					<div class="tx-microportals-microportal-item">
+						|
+					</div>
+				)
+
+				10 = COA
+				10 {
+					if.value = {$styles.content.microportals.default.imagePosition}
+					if.equals = before
+
+					10 = FILES
+					10 {
+						references {
+							fieldName = tx_microportals_portalimage
+						}
+
+						renderObj = IMAGE
+						renderObj {
+
+							layoutKey = picture
+							layout < tt_content.image.20.1.layout
+
+							file {
+								import.data = file:current:uid
+								treatIdAsReference = 1
+							}
+
+							altText.data = file:current:alternative
+							altText.ifEmpty.field = title
+							titleText.data = file:current:title
+						}
+
+						stdWrap.wrap = <div class="tx-microportals-item-image">|</div>
+						stdWrap.required = 1
+					}
+				}
+
+				50 = TEXT
+				50.value = |
+
+				80 < .10
+				80.if.equals = after
+
+			}
+		}
+	}
+
+	// Microportal of subpages of selected pages
+	tx_microportals_sel_subpg < .tx_microportals_sel_pg
+	tx_microportals_sel_subpg.special = directory
+}

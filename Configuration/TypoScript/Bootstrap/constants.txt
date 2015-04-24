@@ -1,0 +1,19 @@
+
+# customsubcategory=microportals=Microportals;
+styles.content.microportals {
+
+	# contains settings for the default microportal (without subnav)
+	default {
+
+		# cat=content/microportals/m3; type=boolean; label=Enable more link: Only for default microportal: if TRUE the more link will be displayed under the teaser
+		enableMoreLink = 0
+
+		# cat=content/microportals/m4; type=options[before,after]; label=Image position: Only for default microportal: Can be "before", than the image is displayed before the heading or "after", than the image is displayed after the heading
+		imagePosition = before
+	}
+
+	withSubnav {
+		# cat=content/microportals/m5; type=string; label=Dummy image (subnav): The dummy image that is used for the microportals with subnavigation if no image is configured.
+		dummyImage = EXT:microportals/Resources/Public/Images/DummyImage.png
+	}
+}
