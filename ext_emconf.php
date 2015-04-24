@@ -11,8 +11,8 @@
  ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = array (
-	'title' => 'Uni FLensburg - Microportals',
-	'description' => 'Adds page properties for microportal settings like image.',
+	'title' => 'Microportals',
+	'description' => 'Generate microportals with a menu content element.',
 	'category' => 'plugin',
 	'shy' => 0,
 	'version' => '1.0.0',
