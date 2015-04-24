@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2011-10-17T20:22:33Z" product-name="microportals">
+		<header />
+		<body>
+			<trans-unit id="tx_microportals_portalimage.description" xml:space="preserve">
+				<source>If this page is used in a Microportal this image will be displayed together with the page title.</source>
+			</trans-unit>
+			<trans-unit id="tx_microportals_portalteaser.description" xml:space="preserve">
+				<source>If this page is used in a Microportal this teaser text will be displayed together with the page title.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

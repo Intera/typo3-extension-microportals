@@ -1,0 +1,11 @@
+{
+	"name": "intera-typo3-extension/microportals",
+	"description": "TYPO3 Extension for generating microportals with a menu content element.",
+	"license": "GPL3+",
+	"authors": [
+		{
+			"name": "Alexander Stehlik",
+			"email": "astehlik@intera.de"
+		}
+	]
+}
