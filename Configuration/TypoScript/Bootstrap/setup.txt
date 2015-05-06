@@ -55,7 +55,7 @@ tt_content.menu.20 {
 				}
 
 				50 = TEXT
-				50.value = |
+				50.value = <div class="tx-microportals-item-text">|</div>
 
 				80 < .10
 				80.if.equals = after
