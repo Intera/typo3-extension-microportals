@@ -12,7 +12,7 @@ tt_content.menu.20 {
 		1.itemArrayProcFunc = Int\Microportals\Utility\MenuUtility->removeNavTitleItemArrayProcFunc
 		1.IProcFunc = Int\Microportals\Utility\MenuUtility->replaceATagMarkersInMenuPartsIProcFunc
 		1.NO {
-			wrapItemAndSub = <div class="tx-microportals-microportal-column col-md-2 col-xs-4">|</div>
+			wrapItemAndSub = <div class="tx-microportals-microportal-column">|</div>
 			stdWrap.outerWrap.cObject = COA
 			stdWrap.outerWrap.cObject {
 
