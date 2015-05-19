@@ -6,6 +6,7 @@ tt_content.menu.20 {
 	tx_microportals_sel_pg = HMENU
 	tx_microportals_sel_pg {
 		special = list
+		special.value.field = pages
 		stdWrap.outerWrap >
 		wrap = <div class="row tx-microportals-microportal">
 		1 = TMENU
