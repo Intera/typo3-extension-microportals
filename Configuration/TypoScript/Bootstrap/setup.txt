@@ -53,6 +53,8 @@ tt_content.menu.20 {
 						stdWrap.wrap = <div class="tx-microportals-item-image">|</div>
 						stdWrap.required = 1
 					}
+
+					stdWrap.ifEmpty = <div class="tx-microportals-item-no-image"></div>
 				}
 
 				50 = TEXT
