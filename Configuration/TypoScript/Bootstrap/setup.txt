@@ -37,10 +37,34 @@ tt_content.menu.20 {
 						renderObj = IMAGE
 						renderObj {
 
-							layoutKey = picture
-							layout < tt_content.image.20.1.layout
+							// We need to use a hack here to get the correct template for the last element
+							// because optionSlit is already executed for the MENU content object and will
+							// give us invalid values for the sourceCollection.
+							layoutKey = srcset
+							layout.srcset.element < tt_content.image.20.1.layout.srcset.element
+							layout.srcset.source.cObject = USER
+							layout.srcset.source.cObject.userFunc = Int\Microportals\Utility\TypoScriptUtility->fetchAndExplodeTypoScriptFromPath
+							layout.srcset.source.cObject.path = tt_content.image.20.1.layout.srcset.source
+							layout.srcset.source.cObject.delimiter = optionSplit
+							layout.srcset.source.cObject.resetAfter = 2
+
+							sourceCollection {
+								small {
+									width = 400
+									srcsetCandidate = 400w
+									dataKey = small
+								}
+								medium {
+									width = 600
+									srcsetCandidate = 600w
+									dataKey = medium
+								}
+							}
 
 							file {
+								width = 400
+								// We use intval here to make sure the same image as in the sourceCollection is used.
+								width.intval = 1
 								import.data = file:current:uid
 								treatIdAsReference = 1
 							}
