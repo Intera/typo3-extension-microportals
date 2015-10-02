@@ -1,0 +1,9 @@
+<div class="tx-microportals-microportal-column {f:if(condition: '{image}', then: 'tx-microportals-has-image', else: 'tx-microportals-no-image')}">
+	<div class="tx-microportals-microportal-item feature">
+		<f:if condition="{image}">
+			<f:then><div class="tx-microportals-item-image"><f:format.raw>{image}</f:format.raw></div></f:then>
+			<f:else><div class="tx-microportals-item-no-image"></div></f:else>
+		</f:if>
+		<div class="tx-microportals-item-text feature-headline feature-headline">|</div>
+	</div>
+</div>
