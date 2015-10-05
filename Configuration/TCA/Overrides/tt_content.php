@@ -18,11 +18,7 @@ if (!defined('TYPO3_MODE')) {
 	'tx_microportals_sel_pg_wsub'
 ));
 
-// We hide the header_layout for the "normal" microportals because we
-// always want to use the same header so that the size of the subelement
-// is fitting to the header size.
-// Additinally we have to hide the category fields, otherwise we will get
-// an Exception (see CategoryRegistry::getCategoryFieldsForTable())
-$GLOBALS['TCA']['tt_content']['types']['menu']['subtypes_excludelist']['tx_microportals_sel_pg'] = 'header_layout,selected_categories,category_field';
-$GLOBALS['TCA']['tt_content']['types']['menu']['subtypes_excludelist']['tx_microportals_sel_subpg'] = 'header_layout,selected_categories,category_field';
+// We have to hide the category fields, otherwise we will get an Exception (see CategoryRegistry::getCategoryFieldsForTable()).
+$GLOBALS['TCA']['tt_content']['types']['menu']['subtypes_excludelist']['tx_microportals_sel_pg'] = 'selected_categories,category_field';
+$GLOBALS['TCA']['tt_content']['types']['menu']['subtypes_excludelist']['tx_microportals_sel_subpg'] = 'selected_categories,category_field';
 $GLOBALS['TCA']['tt_content']['types']['menu']['subtypes_excludelist']['tx_microportals_sel_pg_wsub'] = 'selected_categories,category_field';
