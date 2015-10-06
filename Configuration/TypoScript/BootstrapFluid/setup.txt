@@ -8,7 +8,7 @@ tt_content.menu.20 {
 		special = list
 		special.value.field = pages
 		stdWrap.outerWrap >
-		wrap = <div class="row tx-microportals-microportal">|</div>
+		wrap = <div class="row tx-microportals-microportal-wrapper"><div class="row tx-microportals-microportal">|</div></div>
 		1 = TMENU
 		1.itemArrayProcFunc = Int\Microportals\Utility\MenuUtility->removeNavTitleItemArrayProcFunc
 		1.IProcFunc = Int\Microportals\Utility\MenuUtility->replaceATagMarkersInMenuPartsIProcFunc
