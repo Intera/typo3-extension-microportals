@@ -11,9 +11,11 @@ tt_content.menu.20 {
 		wrap = <div class="row tx-microportals-microportal">|</div>
 		1 = TMENU
 		1.itemArrayProcFunc = Int\Microportals\Utility\MenuUtility->removeNavTitleItemArrayProcFunc
+		1.IProcFunc = Int\Microportals\Utility\MenuUtility->replaceATagMarkersInMenuPartsIProcFunc
 		1.NO {
-			stdWrap.outerWrap.cObject = FLUIDTEMPLATE
-			stdWrap.outerWrap.cObject {
+			doNotShowLink = 1
+			after.cObject = FLUIDTEMPLATE
+			after.cObject {
 
 				template = FILE
 				template.file = EXT:microportals/Resources/Private/Templates/BootstrapFluid/MicroportalItem.html

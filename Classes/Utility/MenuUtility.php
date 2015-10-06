@@ -46,7 +46,10 @@ class MenuUtility {
 
 		$markerArray = array(
 			'ATag_begin' => $itemConfig['parts']['ATag_begin'],
-			'ATag_end' => $itemConfig['parts']['ATag_end']
+			'ATag_end' => $itemConfig['parts']['ATag_end'],
+			'A1' => $itemConfig['A1'],
+			'A2' => $itemConfig['A2'],
+			'title' => $itemConfig['title'],
 		);
 
 		foreach (array('before', 'after') as $markerReplacePart) {
