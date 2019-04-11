@@ -1,24 +1,52 @@
 <?php
+
+/** @noinspection PhpFullyQualifiedNameUsageInspection */
+
 if (!defined('TYPO3_MODE')) {
-	die('Access denied.');
+    die('Access denied.');
 }
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem('tt_content', 'menu_type', array(
-	'LLL:EXT:microportals/Resources/Private/Language/locallang_db.xlf:tt_content.menu_type.I.tx_microportals_sel_pg',
-	'tx_microportals_sel_pg'
-));
+$lllPrefix = 'LLL:EXT:microportals/Resources/Private/Language/locallang_db.xlf:';
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem('tt_content', 'menu_type', array(
-	'LLL:EXT:microportals/Resources/Private/Language/locallang_db.xlf:tt_content.menu_type.I.tx_microportals_sel_subpg',
-	'tx_microportals_sel_subpg'
-));
+// Microportal of selected pages.
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+    'tt_content',
+    'CType',
+    [
+        $lllPrefix . 'tt_content.menu_type.I.tx_microportals_sel_pg',
+        'menu_tx_microportals_sel_pg',
+    ]
+);
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem('tt_content', 'menu_type', array(
-	'LLL:EXT:microportals/Resources/Private/Language/locallang_db.xlf:tt_content.menu_type.I.tx_microportals_sel_pg_wsub',
-	'tx_microportals_sel_pg_wsub'
-));
+$GLOBALS['TCA']['tt_content']['types']['tx_microportals_sel_pg'] =
+    $GLOBALS['TCA']['tt_content']['types']['menu_pages'];
 
-// We have to hide the category fields, otherwise we will get an Exception (see CategoryRegistry::getCategoryFieldsForTable()).
-$GLOBALS['TCA']['tt_content']['types']['menu']['subtypes_excludelist']['tx_microportals_sel_pg'] = 'selected_categories,category_field';
-$GLOBALS['TCA']['tt_content']['types']['menu']['subtypes_excludelist']['tx_microportals_sel_subpg'] = 'selected_categories,category_field';
-$GLOBALS['TCA']['tt_content']['types']['menu']['subtypes_excludelist']['tx_microportals_sel_pg_wsub'] = 'selected_categories,category_field';
+
+// Microportal of subpages of selected pages.
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+    'tt_content',
+    'CType',
+    [
+        $lllPrefix . 'tt_content.menu_type.I.tx_microportals_sel_subpg',
+        'menu_tx_microportals_sel_subpg',
+    ]
+);
+
+$GLOBALS['TCA']['tt_content']['types']['tx_microportals_sel_subpg'] =
+    $GLOBALS['TCA']['tt_content']['types']['menu_subpages'];
+
+
+// Microportal with subpages of selected pages.
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+    'tt_content',
+    'CType',
+    [
+        $lllPrefix . 'tt_content.menu_type.I.tx_microportals_sel_pg_wsub',
+        'menu_tx_microportals_sel_pg_wsub',
+    ]
+);
+
+$GLOBALS['TCA']['tt_content']['types']['tx_microportals_sel_pg_wsub'] =
+    $GLOBALS['TCA']['tt_content']['types']['menu_pages'];
+
+unset($lllPrefix);
