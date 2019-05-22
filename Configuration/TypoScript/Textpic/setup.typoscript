@@ -3,7 +3,7 @@ tt_content.tx_microportals_sel_pg < tt_content.menu.menu_abstract
 tt_content {
 
   // microportal of selected pages
-  menu_tx_microportals_sel_pg {
+  tx_microportals_sel_pg {
     special = list
     stdWrap.outerWrap >
     wrap = <div class="floatbox csc-menu csc-menu-microportal csc-menu-microportal-without-subpages"><div class="csc-textpic csc-textpic-center csc-textpic-above"><div class="csc-textpic-imagewrap">|</div></div><div class="csc-textpic-clear"><!-- --></div></div>
@@ -229,12 +229,12 @@ tt_content {
   }
 
   // Microportal of subpages of selected pages
-  menu_tx_microportals_sel_subpg < .tx_microportals_sel_pg
-  menu_tx_microportals_sel_subpg.special = directory
+  tx_microportals_sel_subpg < .tx_microportals_sel_pg
+  tx_microportals_sel_subpg.special = directory
 
   // Microportal with subpages
-  menu_tx_microportals_sel_pg_wsub < .tx_microportals_sel_subpg
-  menu_tx_microportals_sel_pg_wsub {
+  tx_microportals_sel_pg_wsub < .tx_microportals_sel_subpg
+  tx_microportals_sel_pg_wsub {
     wrap = <div class="floatbox csc-menu csc-menu-microportal csc-menu-microportal-with-subpages"><div class="csc-textpic csc-textpic-center csc-textpic-above"><div class="csc-textpic-imagewrap">|</div></div><div class="csc-textpic-clear"><!-- --></div></div>
     special = list
     1 {
@@ -289,8 +289,8 @@ tt_content {
 [else]
   // if we are NOT in the mobile version we display the second level
   // navigation in the microportal with subpages
-  menu_tt_content.menu.20.tx_microportals_sel_pg_wsub.2 = TMENU
-  menu_tt_content.menu.20.tx_microportals_sel_pg_wsub.2 {
+  tt_content.menu.20.tx_microportals_sel_pg_wsub.2 = TMENU
+  tt_content.menu.20.tx_microportals_sel_pg_wsub.2 {
     wrap = <ul>|</ul>
     NO.wrapItemAndSub = <li>|</li>
   }

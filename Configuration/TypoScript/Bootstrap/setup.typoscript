@@ -2,8 +2,8 @@
 tt_content {
 
   // microportal of selected pages
-  menu_tx_microportals_sel_pg = HMENU
-  menu_tx_microportals_sel_pg {
+  tx_microportals_sel_pg = HMENU
+  tx_microportals_sel_pg {
     special = list
     special.value.field = pages
     stdWrap.outerWrap >
@@ -92,6 +92,6 @@ tt_content {
   }
 
   // Microportal of subpages of selected pages
-  menu_tx_microportals_sel_subpg < .tx_microportals_sel_pg
-  menu_tx_microportals_sel_subpg.special = directory
+  tx_microportals_sel_subpg < .tx_microportals_sel_pg
+  tx_microportals_sel_subpg.special = directory
 }
