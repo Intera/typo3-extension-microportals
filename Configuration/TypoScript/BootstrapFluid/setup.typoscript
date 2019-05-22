@@ -1,26 +1,18 @@
 // Microportal of selected pages (based on "Menu of subpages to these pages (with abstract)")
 tt_content {
   // Microportal of selected pages
-  menu_tx_microportals_sel_pg = HMENU
-  menu_tx_microportals_sel_pg {
-    special = list
-    special.value.field = pages
-    stdWrap.outerWrap >
-    wrap = <div class="tx-microportals-microportal-wrapper"><div class="row tx-microportals-microportal">|</div></div>
-    1 = TMENU
-    1.itemArrayProcFunc = Int\Microportals\Utility\MenuUtility->removeNavTitleItemArrayProcFunc
-    1.IProcFunc = Int\Microportals\Utility\MenuUtility->replaceATagMarkersInMenuPartsIProcFunc
-    1.NO {
-      doNotShowLink = 1
-      after.cObject = FLUIDTEMPLATE
-      after.cObject {
-        template = FILE
-        template.file = EXT:microportals/Resources/Private/Templates/BootstrapFluid/MicroportalItem.html
-      }
-    }
+  tx_microportals_sel_pg =< tt_content.menu_pages
+  tx_microportals_sel_pg.templateName = Microportal
+  tx_microportals_sel_pg.templateRootPaths.10 = EXT:microportals/Resources/Private/Templates/BootstrapFluid
+
+  // Menu data processor
+  tx_microportals_sel_pg.dataProcessing.10 {
+    // Disable nav_title
+    titleField = tx_microportals_portalteaser // title
+    dataProcessing.10.references.fieldName = tx_microportals_portalimage
   }
 
   // Microportal of subpages of selected pages
-  menu_tx_microportals_sel_subpg < .tx_microportals_sel_pg
-  menu_tx_microportals_sel_subpg.special = directory
+  tx_microportals_sel_subpg < .tx_microportals_sel_pg
+  tx_microportals_sel_subpg =< tt_content.menu_subpages
 }
