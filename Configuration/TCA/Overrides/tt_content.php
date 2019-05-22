@@ -32,17 +32,24 @@ $GLOBALS['TCA']['tt_content']['types']['tx_microportals_sel_pg'] =
 $GLOBALS['TCA']['tt_content']['types']['tx_microportals_sel_subpg'] =
     $GLOBALS['TCA']['tt_content']['types']['menu_subpages'];
 
-// Microportal with subpages of selected pages.
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
-    'tt_content',
-    'CType',
-    [
-        $lllPrefix . 'tt_content.menu_type.I.tx_microportals_sel_pg_wsub',
-        'tx_microportals_sel_pg_wsub',
-    ]
+$extensionConfig = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
+    \TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class
 );
 
-$GLOBALS['TCA']['tt_content']['types']['tx_microportals_sel_pg_wsub'] =
-    $GLOBALS['TCA']['tt_content']['types']['menu_pages'];
+if ($extensionConfig->get('microportals', 'enableMicroportalWithSupages')) {
+// Microportal with subpages of selected pages.
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+        'tt_content',
+        'CType',
+        [
+            $lllPrefix . 'tt_content.menu_type.I.tx_microportals_sel_pg_wsub',
+            'tx_microportals_sel_pg_wsub',
+        ]
+    );
 
+    $GLOBALS['TCA']['tt_content']['types']['tx_microportals_sel_pg_wsub'] =
+        $GLOBALS['TCA']['tt_content']['types']['menu_pages'];
+}
+
+unset($extensionConfig);
 unset($lllPrefix);
