@@ -1,10 +1,8 @@
 <?php
-
+/** @noinspection PhpMissingStrictTypesDeclarationInspection */
 /** @noinspection PhpFullyQualifiedNameUsageInspection */
 
-if (!defined('TYPO3_MODE')) {
-    die('Access denied.');
-}
+defined('TYPO3_MODE') or die();
 
 $lllPrefix = 'LLL:EXT:microportals/Resources/Private/Language/locallang_db.xlf:';
 
@@ -21,7 +19,6 @@ $lllPrefix = 'LLL:EXT:microportals/Resources/Private/Language/locallang_db.xlf:'
 $GLOBALS['TCA']['tt_content']['types']['tx_microportals_sel_pg'] =
     $GLOBALS['TCA']['tt_content']['types']['menu_pages'];
 
-
 // Microportal of subpages of selected pages.
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
@@ -34,7 +31,6 @@ $GLOBALS['TCA']['tt_content']['types']['tx_microportals_sel_pg'] =
 
 $GLOBALS['TCA']['tt_content']['types']['tx_microportals_sel_subpg'] =
     $GLOBALS['TCA']['tt_content']['types']['menu_subpages'];
-
 
 // Microportal with subpages of selected pages.
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
