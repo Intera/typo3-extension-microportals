@@ -1,13 +1,18 @@
 <?php
+/** @noinspection PhpMissingStrictTypesDeclarationInspection */
 /** @noinspection PhpFullyQualifiedNameUsageInspection */
 
-if (!defined('TYPO3_MODE')) {
-    die('Access denied.');
-}
+defined('TYPO3_MODE') or die();
+
+$lllPrefixPages = 'LLL:' . 'EXT:microportals/Resources/Private/Language/locallang_db.xlf:pages.';
+$lllPrefixFileReference = 'LLL:' . 'EXT:lang/locallang_tca.xlf:sys_file_reference.';
+
+$imageShowitem = '--palette--;' . $lllPrefixFileReference . 'imageoverlayPalette;txMicroportalsImageOverlayPalette,
+                  --palette--;;filePalette';
 
 $pagesColumns = [
     'tx_microportals_portalimage' => [
-        'label' => 'LLL:EXT:microportals/Resources/Private/Language/locallang_db.xlf:pages.tx_microportals_portalimage',
+        'label' => $lllPrefixPages . 'tx_microportals_portalimage',
         'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
             'tx_microportals_portalimage',
             [
@@ -17,14 +22,10 @@ $pagesColumns = [
                 'maxitems' => 1,
                 'foreign_types' => [
                     '0' => [
-                        'showitem' => '
-							--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;txMicroportalsImageOverlayPalette,
-							--palette--;;filePalette',
+                        'showitem' => $imageShowitem,
                     ],
                     \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-                        'showitem' => '
-							--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;txMicroportalsImageOverlayPalette,
-							--palette--;;filePalette',
+                        'showitem' => $imageShowitem,
                     ],
                 ],
             ],
@@ -32,7 +33,7 @@ $pagesColumns = [
         ),
     ],
     'tx_microportals_portalteaser' => [
-        'label' => 'LLL:EXT:microportals/Resources/Private/Language/locallang_db.xlf:pages.tx_microportals_portalteaser',
+        'label' => $lllPrefixPages . 'tx_microportals_portalteaser',
         'config' => [
             'type' => 'input',
         ],
@@ -42,13 +43,11 @@ $pagesColumns = [
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages', $pagesColumns);
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
     'pages',
-    '--div--;LLL:EXT:microportals/Resources/Private/Language/locallang_db.xlf:pages.tx_microportals_tabheader,tx_microportals_portalimage,tx_microportals_portalteaser'
-);
-
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages_language_overlay', $pagesColumns);
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
-    'pages_language_overlay',
-    '--div--;LLL:EXT:microportals/Resources/Private/Language/locallang_db.xlf:pages.tx_microportals_tabheader,tx_microportals_portalimage,tx_microportals_portalteaser'
+    '--div--;' . $lllPrefixPages . 'tx_microportals_tabheader,'
+    . 'tx_microportals_portalimage, tx_microportals_portalteaser'
 );
 
 unset($pagesColumns);
+unset($imageShowitem);
+unset($lllPrefixFileReference);
+unset($lllPrefixPages);
