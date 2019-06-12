@@ -3,6 +3,7 @@ tt_content {
   // Microportal of selected pages
   tx_microportals_sel_pg =< tt_content.menu_pages
   tx_microportals_sel_pg.templateName = Microportal
+  tx_microportals_sel_pg.partialRootPaths.10 = EXT:microportals/Resources/Private/Partials/BootstrapFluid
   tx_microportals_sel_pg.templateRootPaths.10 = EXT:microportals/Resources/Private/Templates/BootstrapFluid
 
   // Menu data processor
