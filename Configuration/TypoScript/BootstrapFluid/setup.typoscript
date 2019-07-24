@@ -9,7 +9,7 @@ tt_content {
   // Menu data processor
   tx_microportals_sel_pg.dataProcessing.10 {
     // Disable nav_title
-    titleField = tx_microportals_portalteaser // title
+    titleField = tx_microportals_title_override // title
     dataProcessing.10.references.fieldName = tx_microportals_portalimage
   }
 
