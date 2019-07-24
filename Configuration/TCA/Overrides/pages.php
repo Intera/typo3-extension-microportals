@@ -38,6 +38,12 @@ $pagesColumns = [
             'type' => 'input',
         ],
     ],
+    'tx_microportals_portalicon' => [
+        'label' => $lllPrefixPages . 'tx_microportals_portalicon',
+        'config' => [
+            'type' => 'input',
+        ],
+    ],
 ];
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages', $pagesColumns);
