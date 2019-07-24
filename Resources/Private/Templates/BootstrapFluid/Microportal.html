@@ -12,7 +12,12 @@
                     </div>
 
                     <a href="{page.link}" class="stretched-link">
-                        <div class="title-container"><span>{page.title}</span></div>
+                        <div class="title-container">
+                            <f:if condition="{page.data.tx_microportals_portalicon}">
+                                <i class="{page.data.tx_microportals_portalicon}"></i>
+                            </f:if>
+                            <span>{page.title}</span>
+                        </div>
                     </a>
                 </div>
             </div>
