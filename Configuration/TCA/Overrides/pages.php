@@ -1,6 +1,7 @@
 <?php
-/** @noinspection PhpMissingStrictTypesDeclarationInspection */
-/** @noinspection PhpFullyQualifiedNameUsageInspection */
+declare(strict_types=1);
+
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3_MODE') or die();
 
@@ -11,9 +12,15 @@ $imageShowitem = '--palette--;' . $lllPrefixFileReference . 'imageoverlayPalette
                   --palette--;;filePalette';
 
 $pagesColumns = [
+    'tx_microportals_portalicon' => [
+        'label' => $lllPrefixPages . 'tx_microportals_portalicon',
+        'config' => [
+            'type' => 'input',
+        ],
+    ],
     'tx_microportals_portalimage' => [
         'label' => $lllPrefixPages . 'tx_microportals_portalimage',
-        'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+        'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
             'tx_microportals_portalimage',
             [
                 'appearance' => [
@@ -38,22 +45,27 @@ $pagesColumns = [
             'type' => 'input',
         ],
     ],
-    'tx_microportals_portalicon' => [
-        'label' => $lllPrefixPages . 'tx_microportals_portalicon',
+    'tx_microportals_title_override' => [
+        'label' => $lllPrefixPages . 'tx_microportals_title_override',
+        'description' => $lllPrefixPages . 'tx_microportals_title_override_description',
         'config' => [
             'type' => 'input',
+            'size' => 50,
+            'max' => 255,
+            'eval' => 'trim',
+            'placeholder' => '__row|title',
         ],
     ],
 ];
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages', $pagesColumns);
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+ExtensionManagementUtility::addTCAcolumns('pages', $pagesColumns);
+ExtensionManagementUtility::addToAllTCAtypes(
     'pages',
-    '--div--;' . $lllPrefixPages . 'tx_microportals_tabheader,'
-    . 'tx_microportals_portalimage, tx_microportals_portalteaser'
+    '
+        --div--;' . $lllPrefixPages . 'tx_microportals_tabheader,
+            tx_microportals_portalimage,
+            tx_microportals_portalteaser,
+            tx_microportals_portalicon,
+            tx_microportals_title_override
+    '
 );
-
-unset($pagesColumns);
-unset($imageShowitem);
-unset($lllPrefixFileReference);
-unset($lllPrefixPages);
