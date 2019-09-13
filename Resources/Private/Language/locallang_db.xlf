@@ -30,6 +30,9 @@
 			<trans-unit id="tt_content.menu_type.I.tx_microportals_sel_pg_wsub" xml:space="preserve">
 				<source>Microportal with subpages</source>
 			</trans-unit>
+			<trans-unit id="tt_content.tx_microportals_with_zoom" xml:space="preserve">
+				<source>Enable Microportal zoom</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

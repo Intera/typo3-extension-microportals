@@ -39,6 +39,10 @@
 				<source>Microportal with subpages</source>
 				<target state="translated">Microportal mit Unterseitenmenü</target>
 			</trans-unit>
+			<trans-unit id="tt_content.tx_microportals_with_zoom" xml:space="preserve" approved="yes">
+				<source>Enable Microportal zoom</source>
+				<target state="translated">Microportal Zoom aktivieren</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
