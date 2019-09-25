@@ -9,5 +9,5 @@ CREATE TABLE pages (
 );
 
 CREATE TABLE tt_content (
-	tx_microportals_enable_zoom tinyint(3) DEFAULT '1' NOT NULL,
+	tx_microportals_enable_zoom tinyint(3) DEFAULT '1' NOT NULL
 );
