@@ -1,0 +1,2 @@
+# cat=Microportals; type=check; label=Enable microportal with subpages
+enableMicroportalWithSupages = 0

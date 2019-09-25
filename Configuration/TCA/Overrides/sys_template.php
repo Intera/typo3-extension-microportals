@@ -1,7 +1,16 @@
 <?php
-if (!defined('TYPO3_MODE')) {
-	die('Access denied.');
-}
+/** @noinspection PhpMissingStrictTypesDeclarationInspection */
+/** @noinspection PhpFullyQualifiedNameUsageInspection */
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('microportals', 'Configuration/TypoScript/Textpic', 'Microportals - Textpic rendering');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('microportals', 'Configuration/TypoScript/Bootstrap', 'Microportals - Bootstrap rendering');
+defined('TYPO3_MODE') or die();
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
+    'microportals',
+    'Configuration/TypoScript/Textpic',
+    'Microportals - Textpic rendering'
+);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
+    'microportals',
+    'Configuration/TypoScript/Bootstrap',
+    'Microportals - Bootstrap rendering'
+);

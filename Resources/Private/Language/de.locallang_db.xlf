@@ -3,24 +3,46 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2011-10-17T20:22:32Z" product-name="microportals" target-language="de">
 		<header/>
 		<body>
-			<trans-unit id="pages.tx_microportals_tabheader" xml:space="preserve" approved="yes">
-				<source>Picture for Microportal</source>
-			<target state="translated">Bild für Microportal</target></trans-unit>
+			<trans-unit id="pages.tx_microportals_portalicon" xml:space="preserve" approved="yes">
+				<source>Icon</source>
+				<target state="translated">Icon</target>
+			</trans-unit>
 			<trans-unit id="pages.tx_microportals_portalimage" xml:space="preserve" approved="yes">
-				<source>Microportal image</source>
-			<target state="translated">Microportal Bild</target></trans-unit>
+				<source>Image</source>
+				<target state="translated">Bild</target>
+			</trans-unit>
 			<trans-unit id="pages.tx_microportals_portalteaser" xml:space="preserve" approved="yes">
-				<source>Microportal teaser</source>
-			<target state="translated">Microportal Teasertext</target></trans-unit>
+				<source>Teaser</source>
+				<target state="translated">Teasertext</target>
+			</trans-unit>
+			<trans-unit id="pages.tx_microportals_tabheader" xml:space="preserve" approved="yes">
+				<source>Microportal</source>
+				<target state="translated">Microportal</target>
+			</trans-unit>
+			<trans-unit id="pages.tx_microportals_title_override" xml:space="preserve" approved="yes">
+				<source>Override page title</source>
+				<target state="translated">Titel überschreiben</target>
+			</trans-unit>
+			<trans-unit id="pages.tx_microportals_title_override_description" xml:space="preserve" approved="yes">
+				<source>The page title is used by default</source>
+				<target state="translated">Standardmäßig wird der Seitentitel verwendet</target>
+			</trans-unit>
 			<trans-unit id="tt_content.menu_type.I.tx_microportals_sel_pg" xml:space="preserve" approved="yes">
 				<source>Microportal of the selected pages</source>
-			<target state="translated">Microportal der gewählten Seiten</target></trans-unit>
+				<target state="translated">Microportal der gewählten Seiten</target>
+			</trans-unit>
 			<trans-unit id="tt_content.menu_type.I.tx_microportals_sel_subpg" xml:space="preserve" approved="yes">
 				<source>Microportal of the subpages of the selected pages</source>
-			<target state="translated">Microportal der Unterseiten der gewählten Seiten</target></trans-unit>
+				<target state="translated">Microportal der Unterseiten der gewählten Seiten</target>
+			</trans-unit>
 			<trans-unit id="tt_content.menu_type.I.tx_microportals_sel_pg_wsub" xml:space="preserve" approved="yes">
 				<source>Microportal with subpages</source>
-			<target state="translated">Microportal mit Unterseitenmenü</target></trans-unit>
+				<target state="translated">Microportal mit Unterseitenmenü</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_microportals_with_zoom" xml:space="preserve" approved="yes">
+				<source>Enable Microportal zoom</source>
+				<target state="translated">Microportal Zoom aktivieren</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

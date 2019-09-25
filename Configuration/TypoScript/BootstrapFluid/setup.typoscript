@@ -1,0 +1,19 @@
+// Microportal of selected pages (based on "Menu of subpages to these pages (with abstract)")
+tt_content {
+  // Microportal of selected pages
+  tx_microportals_sel_pg =< tt_content.menu_pages
+  tx_microportals_sel_pg.templateName = Microportal
+  tx_microportals_sel_pg.partialRootPaths.10 = EXT:microportals/Resources/Private/Partials/BootstrapFluid
+  tx_microportals_sel_pg.templateRootPaths.10 = EXT:microportals/Resources/Private/Templates/BootstrapFluid
+
+  // Menu data processor
+  tx_microportals_sel_pg.dataProcessing.10 {
+    // Disable nav_title
+    titleField = tx_microportals_title_override // title
+    dataProcessing.10.references.fieldName = tx_microportals_portalimage
+  }
+
+  // Microportal of subpages of selected pages
+  tx_microportals_sel_subpg < .tx_microportals_sel_pg
+  tx_microportals_sel_subpg =< tt_content.menu_subpages
+}

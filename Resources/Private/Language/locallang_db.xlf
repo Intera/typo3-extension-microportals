@@ -3,14 +3,23 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2011-10-17T20:22:32Z" product-name="microportals">
 		<header/>
 		<body>
-			<trans-unit id="pages.tx_microportals_tabheader" xml:space="preserve">
-				<source>Picture for Microportal</source>
+			<trans-unit id="pages.tx_microportals_portalicon" xml:space="preserve">
+				<source>Icon</source>
 			</trans-unit>
 			<trans-unit id="pages.tx_microportals_portalimage" xml:space="preserve">
-				<source>Microportal image</source>
+				<source>Image</source>
 			</trans-unit>
 			<trans-unit id="pages.tx_microportals_portalteaser" xml:space="preserve">
-				<source>Microportal teaser</source>
+				<source>Teaser</source>
+			</trans-unit>
+			<trans-unit id="pages.tx_microportals_tabheader" xml:space="preserve">
+				<source>Microportal</source>
+			</trans-unit>
+			<trans-unit id="pages.tx_microportals_title_override" xml:space="preserve">
+				<source>Override page title</source>
+			</trans-unit>
+			<trans-unit id="pages.tx_microportals_title_override_description" xml:space="preserve">
+				<source>The page title is used by default</source>
 			</trans-unit>
 			<trans-unit id="tt_content.menu_type.I.tx_microportals_sel_pg" xml:space="preserve">
 				<source>Microportal of the selected pages</source>
@@ -20,6 +29,9 @@
 			</trans-unit>
 			<trans-unit id="tt_content.menu_type.I.tx_microportals_sel_pg_wsub" xml:space="preserve">
 				<source>Microportal with subpages</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_microportals_with_zoom" xml:space="preserve">
+				<source>Enable Microportal zoom</source>
 			</trans-unit>
 		</body>
 	</file>
