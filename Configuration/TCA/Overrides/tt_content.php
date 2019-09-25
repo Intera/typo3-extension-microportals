@@ -51,5 +51,27 @@ if ($extensionConfig->get('microportals', 'enableMicroportalWithSupages')) {
         $GLOBALS['TCA']['tt_content']['types']['menu_pages'];
 }
 
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
+    'tt_content',
+    [
+        'tx_microportals_enable_zoom' => [
+            'exclude' => 1,
+            'label' => $lllPrefix . 'tt_content.tx_microportals_with_zoom',
+            'config' => [
+                'type' => 'check',
+                'renderType' => 'checkboxToggle',
+                'default' => 1,
+            ],
+        ],
+    ]
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+    'tt_content',
+    'tx_microportals_enable_zoom',
+    'tx_microportals_sel_pg,tx_microportals_sel_subpg,tx_microportals_sel_pg_wsub',
+    'before:pages'
+);
+
 unset($extensionConfig);
 unset($lllPrefix);
