@@ -6,20 +6,6 @@ defined('TYPO3_MODE') or die();
 
 $lllPrefix = 'LLL:EXT:microportals/Resources/Private/Language/locallang_db.xlf:';
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
-    'tt_content',
-    [
-        'tx_microportals_enable_zoom' => [
-            'exclude' => 1,
-            'label' => $lllPrefix . 'tt_content.tx_microportals_with_zoom',
-            'config' => [
-                'type' => 'check',
-                'default' => true,
-            ],
-        ],
-    ]
-);
-
 // Microportal of selected pages.
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
@@ -63,19 +49,27 @@ if ($extensionConfig->get('microportals', 'enableMicroportalWithSupages')) {
 
     $GLOBALS['TCA']['tt_content']['types']['tx_microportals_sel_pg_wsub'] =
         $GLOBALS['TCA']['tt_content']['types']['menu_pages'];
-
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
-        'tt_content',
-        'tx_microportals_enable_zoom',
-        'tx_microportals_sel_pg_wsub',
-        'before:pages'
-    );
 }
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
+    'tt_content',
+    [
+        'tx_microportals_enable_zoom' => [
+            'exclude' => 1,
+            'label' => $lllPrefix . 'tt_content.tx_microportals_with_zoom',
+            'config' => [
+                'type' => 'check',
+                'renderType' => 'checkboxToggle',
+                'default' => 1,
+            ],
+        ],
+    ]
+);
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
     'tt_content',
     'tx_microportals_enable_zoom',
-    'tx_microportals_sel_pg,tx_microportals_sel_subpg',
+    'tx_microportals_sel_pg,tx_microportals_sel_subpg,tx_microportals_sel_pg_wsub',
     'before:pages'
 );
 
