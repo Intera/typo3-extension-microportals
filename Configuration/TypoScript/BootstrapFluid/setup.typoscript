@@ -13,6 +13,8 @@ tt_content {
     dataProcessing.10.references.fieldName = tx_microportals_portalimage
   }
 
+  tx_microportals_sel_pg.settings.colClasses = col-6 col-md-4 col-lg-3
+
   // Microportal of subpages of selected pages
   tx_microportals_sel_subpg < .tx_microportals_sel_pg
   tx_microportals_sel_subpg =< tt_content.menu_subpages
