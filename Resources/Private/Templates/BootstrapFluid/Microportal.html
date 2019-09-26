@@ -3,11 +3,11 @@
 
 <f:section name="Main">
 <f:if condition="{menu}">
-    <div class="row{f:if(condition: data.tx_microportals_enable_zoom, then: ' microportal-zoom')}">
+    <div class="row microportal">
         <f:for each="{menu}" as="page">
-            <div class="col-6 col-md-4 col-lg-3 col-card {f:if(condition: page.files, then: 'has', else: 'no')}-image">
+            <div class="col-card {settings.colClasses}">
                 <a href="{page.link}">
-                    <div class="card card-microportal">
+                    <div class="card card-microportal{f:if(condition: page.files, then: ' has', else: ' no')}-image{f:if(condition: data.tx_microportals_enable_zoom, then: ' microportal-zoom')}">
                         <div class="img-wrap">
                             <f:render partial="MicroportalImage" arguments="{image: page.files.0}"/>
                         </div>
