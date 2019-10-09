@@ -13,12 +13,14 @@ $imageShowitem = '--palette--;' . $lllPrefixFileReference . 'imageoverlayPalette
 
 $pagesColumns = [
     'tx_microportals_portalicon' => [
+        'exclude' => true,
         'label' => $lllPrefixPages . 'tx_microportals_portalicon',
         'config' => [
             'type' => 'input',
         ],
     ],
     'tx_microportals_portalimage' => [
+        'exclude' => true,
         'label' => $lllPrefixPages . 'tx_microportals_portalimage',
         'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
             'tx_microportals_portalimage',
@@ -40,12 +42,14 @@ $pagesColumns = [
         ),
     ],
     'tx_microportals_portalteaser' => [
+        'exclude' => true,
         'label' => $lllPrefixPages . 'tx_microportals_portalteaser',
         'config' => [
             'type' => 'input',
         ],
     ],
     'tx_microportals_title_override' => [
+        'exclude' => true,
         'label' => $lllPrefixPages . 'tx_microportals_title_override',
         'description' => $lllPrefixPages . 'tx_microportals_title_override_description',
         'config' => [
