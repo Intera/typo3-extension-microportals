@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 
+use TYPO3\CMS\Core\Resource\File;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3_MODE') or die();
@@ -29,12 +30,10 @@ $pagesColumns = [
                     'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
                 ],
                 'maxitems' => 1,
-                'foreign_types' => [
-                    '0' => [
-                        'showitem' => $imageShowitem,
-                    ],
-                    \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-                        'showitem' => $imageShowitem,
+                'overrideChildTca' => [
+                    'types' => [
+                        '0' => ['showitem' => $imageShowitem],
+                        File::FILETYPE_IMAGE => ['showitem' => $imageShowitem],
                     ],
                 ],
             ],
