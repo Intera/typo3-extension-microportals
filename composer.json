@@ -4,7 +4,7 @@
     "type": "typo3-cms-extension",
     "license": "GPL-3.0+",
     "replace": {
-        "microportals": "self.version"
+        "typo3-ter/microportals": "self.version"
     },
     "authors": [
         {
